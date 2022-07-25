@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 user = User.create(name: "test", email: "test@test.com", role: "admin", password: "111111", confirmed_at: Time.now)
 
-recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 1.1, description: "Very tasty dish description", user_id: 1)
+recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 1.1, description: "Very tasty dish description", user_id: user.id)
 
-food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: 1)
+food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: user.id)
 
-recipeFood = RecipeFood.create(quantity: firstFood.quantity, recipe_id: user.id, food_id: food.id)
+recipeFood = RecipeFood.create(quantity: food.quantity, recipe_id: recipe.id, food_id: food.id)

@@ -3,5 +3,9 @@ class RecipesController < ApplicationController
 
   def show; end
 
-  def all; end
+  def all
+    @recipes = Recipe.all
+    # p @recipes[0].name
+    # p "HELLOOOOOOOOOOO"
+  end
 end

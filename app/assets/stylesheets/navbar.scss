@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+
+  ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-around;
+
+    .no_list_style {
+      font-weight: 700;
+    }
+
+    .link_class,
+    .link_list_li {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

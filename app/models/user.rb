@@ -11,6 +11,6 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def admin?
-    role == 'admin'
+    self.role == 'admin'
   end
 end

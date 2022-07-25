@@ -11,4 +11,4 @@ recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 
 
 food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: 1)
 
-RecipeFood.create(quantity: food.quantity, user_id: user, food_id: food)
+recipeFood = RecipeFood.create(quantity: firstFood.quantity, recipe_id: user.id, food_id: food.id)

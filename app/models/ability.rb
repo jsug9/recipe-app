@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.is? :admin
+    if user.admin?
       can :manage, User
       can :manage, Food
       can :manage, Recipe

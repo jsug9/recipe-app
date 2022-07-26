@@ -1,11 +1,14 @@
 class RecipesController < ApplicationController
-  def index; end
+  def index
+    @recipes = Recipe.all
+  end
 
   def show; end
 
-  def all
-    @recipes = Recipe.all
-    # p @recipes[0].name
-    # p "HELLOOOOOOOOOOO"
+  def all; end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    p @recipe
   end
 end

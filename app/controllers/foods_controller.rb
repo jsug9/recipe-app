@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user = current_user
     if @food.save
-      redirect_to food_url(@food)
+      redirect_to foods_path
     else
       render :new
     end

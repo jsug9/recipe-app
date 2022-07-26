@@ -1,1 +1,23 @@
-<h1>All Foods!</h1>
+<div class="table">
+  <%= link_to "Add Food", new_food_path, class:"add_button" %>
+
+  <div class="table_row">
+    <h2>Food</h2>
+    <h2>Quantity</h2>
+    <h2>Measurement Unit</h2>
+    <h2>Unit Price</h2>
+    <h2>Action</h2>
+  </div>
+
+  <%@foods.each do |food|%>
+    <div class="table_row">
+      <p><%=food.name%></p>
+      <p><%=food.quantity%></p>
+      <p><%=food.measurement_unit%></p>
+      <p>$ <%=food.price%></p>
+      <% if can? :destroy, food %>
+        <%= button_to "Delete", food_path(food.id), class:"delete_button", method: :delete %>
+      <% end %>
+    </div>
+  <%end%>
+</div>

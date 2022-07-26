@@ -6,7 +6,7 @@
   margin: 20px;
   gap: 1rem;
 
-  .recipe_card { 
+  .recipe_card {
     width: 100%;
     max-width: 500px;
     display: flex;
@@ -20,8 +20,13 @@
       align-items: center;
       justify-content: space-around;
     }
+
     .recipe_description {
       max-width: 250px;
+    }
+
+    .remove_recipe_button {
+      z-index: 100;
     }
   }
 }

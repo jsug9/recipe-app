@@ -5,9 +5,10 @@ class RecipesController < ApplicationController
 
   def show; end
 
-  def all
-  end
+  def all; end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
+    p @recipe
   end
 end

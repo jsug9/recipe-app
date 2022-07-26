@@ -4,7 +4,7 @@
       <%=recipe.name%>
     </p>
     <%if can? :manage, recipe %>
-      <%=remove_button = button_to "REMOVE", foods_path, method: :get, class: "remove_recipe_button"%>
+      <%=button_to "REMOVE", recipe_path(recipe.id), method: :delete, class: "remove_recipe_button"%>
     <%end%>
   </div>
   <p class="recipe_description">

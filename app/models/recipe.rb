@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
   def total_price
     total_price = 0
     recipe_foods.each do |recipe_food|
-      total_price += recipe_food.food.price * recipe_food.quantity
+      total_price += recipe_food.food.price * recipe_food.food.quantity
     end
     total_price
   end

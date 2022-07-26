@@ -5,9 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.create(name: "test", email: "test@test.com", role: "admin", password: "123456", confirmed_at: Time.now)
-user2 = User.create(name: "test1", email: "tes1t@test.com", password: "123456", confirmed_at: Time.now)
-user3 = User.create(name: "test2", email: "test2@test.com", password: "123456", confirmed_at: Time.now)
+user = User.new(name: "test", email: "test@test.com", role: "admin", password: "123456", confirmed_at: Time.now)
+user2 = User.new(name: "test1", email: "tes1t@test.com", password: "123456", confirmed_at: Time.now)
+user3 = User.new(name: "test2", email: "test2@test.com", password: "123456", confirmed_at: Time.now)
+user.skip_confirmation!
+user2.skip_confirmation!
+user3.skip_confirmation!
+user.save!
+user2.save!
+user3.save!
 
 recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 2.1, description: "Very tasty dish description", user_id: user.id)
 recipe2 = Recipe.create(name: "Normal dish", preparation_time: 1.2, cooking_time: 3.1, description: "Very normal dish description", user_id: user2.id)

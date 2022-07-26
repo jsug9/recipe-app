@@ -5,10 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.create(name: "test", email: "test@test.com", role: "admin", password: "111111", confirmed_at: Time.now)
+user = User.create(name: "test", email: "test@test.com", role: "admin", password: "123456", confirmed_at: Time.now)
+user2 = User.create(name: "test1", email: "tes1t@test.com", password: "123456", confirmed_at: Time.now)
+user3 = User.create(name: "test1", email: "test2@test.com", password: "123456", confirmed_at: Time.now)
 
-recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 1.1, description: "Very tasty dish description", user_id: user.id)
+recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 2.1, description: "Very tasty dish description", user_id: user.id)
+recipe2 = Recipe.create(name: "Normal dish", preparation_time: 1.2, cooking_time: 3.1, description: "Very normal dish description", user_id: user1.id)
+recipe2 = Recipe.create(name: "Awesome dish", preparation_time: 1.5, cooking_time: 4.1, description: "Very awesome dish description", user_id: user1.id)
+recipe3 = Recipe.create(name: "Very dish", preparation_time: 1.6, cooking_time: 5.1, description: "Very very dish description", user_id: user2.id)
 
 food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: user.id)
+food2 = Food.create(name: "Apple", measurement_unit: "g", price: 3.2, quantity: 200, user_id: user1.id)
+food3 = Food.create(name: "Pepper", measurement_unit: "kgs", price: 2.1, quantity: 300, user_id: user1.id)
+food4 = Food.create(name: "Water", measurement_unit: "Lt", price: 1.0, quantity: 10, user_id: user2.id)
 
-recipeFood = RecipeFood.create(quantity: food.quantity, recipe_id: recipe.id, food_id: food.id)
+recipeFood = RecipeFood.create(quantity: 2, recipe_id: recipe.id, food_id: food.id)
+recipeFood2 = RecipeFood.create(quantity: 3, recipe_id: recipe1.id, food_id: food.id)
+recipeFood3 = RecipeFood.create(quantity: 1, recipe_id: recipe2.id, food_id: food1.id)
+recipeFood4 = RecipeFood.create(quantity: 5, recipe_id: recipe3.id, food_id: food2.id)
+recipeFood5 = RecipeFood.create(quantity: 6, recipe_id: recipe3.id, food_id: food3.id)

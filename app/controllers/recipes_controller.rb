@@ -8,4 +8,7 @@ class RecipesController < ApplicationController
     # p @recipes[0].name
     # p "HELLOOOOOOOOOOO"
   end
+
+  def destroy
+  end
 end

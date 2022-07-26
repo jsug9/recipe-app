@@ -1,7 +1,6 @@
 <h1>All Recipes!</h1>
 <%p @recipes[0].name%>
 <%@recipes.each do |recipe|%>
-<%if can? :manage, recipe%>
-  <h3><%=recipe.name%></h3>
-<%end%>
+<%render partial: 'partials/recipe_card', locals: {recipe: recipe}%>
+
 <%end%>

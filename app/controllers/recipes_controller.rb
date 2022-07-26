@@ -7,7 +7,9 @@ class RecipesController < ApplicationController
 
   def show; end
 
-  def all; end
+  def all
+    @recipes = Recipe.all
+  end
 
   def destroy
     @recipe = Recipe.find(params[:id])

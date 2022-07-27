@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   def show; end
 
   def all
-    @recipes = Recipe.all
+    @recipes = Recipe.where(public: true)
   end
 
   def destroy

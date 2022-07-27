@@ -8,7 +8,7 @@ class Ability
       can :manage, User, user: user
       can :manage, Food, user: user
       can :manage, Recipe, user: user
-      can :manage, RecipeFood, user: user
+      can :manage, RecipeFood, user:
     end
   end
 end

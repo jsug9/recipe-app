@@ -11,7 +11,6 @@ class RecipeFoodsController < ApplicationController
     @food = Food.find(@food_id)
     @recipe_food = RecipeFood.new(quantity: @food.quantity, food_id: @food_id, recipe_id: @recipe_id)
     redirect_to recipe_path(@recipe_id) if @recipe_food.save
-
   end
 
   def destroy

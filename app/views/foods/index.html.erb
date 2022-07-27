@@ -1,23 +1,27 @@
 <div class="table">
   <%= link_to "Add Food", new_food_path, class:"add_button" %>
 
-  <div class="table_row">
-    <h2>Food</h2>
-    <h2>Quantity</h2>
-    <h2>Measurement Unit</h2>
-    <h2>Unit Price</h2>
-    <h2>Action</h2>
-  </div>
-
-  <%@foods.each do |food|%>
-    <div class="table_row">
-      <p><%=food.name%></p>
-      <p><%=food.quantity%></p>
-      <p><%=food.measurement_unit%></p>
-      <p>$ <%=food.price%></p>
-      <% if can? :destroy, food %>
+  <table id="foods">
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Measurement Unit</th>
+    <th>Unit Price</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <%@foods.each do |food|%>
+    <tr>
+      <td><%=food.name%></td>
+      <td><%=food.quantity%></td>
+      <td><%=food.measurement_unit%></td>
+      <td><%=food.price%></td>
+      <td>
+        <% if can? :destroy, food %>
         <%= button_to "Delete", food_path(food.id), class:"delete_button", method: :delete %>
-      <% end %>
-    </div>
-  <%end%>
-</div>
+        <% end %>
+      </td>
+      </tr>
+    <%end%>
+</table>
+

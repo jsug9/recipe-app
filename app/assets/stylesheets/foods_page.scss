@@ -1,0 +1,37 @@
+.table {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+
+  .add_button {
+    align-self: end;
+    margin-right: 3rem;
+  }
+}
+
+// Foods table
+#foods {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+#foods td,
+#foods th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#foods tr:nth-child(even) { background-color: #f2f2f2; }
+
+#foods tr:hover { background-color: #ddd; }
+
+#foods th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #999;
+  color: white;
+}

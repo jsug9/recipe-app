@@ -23,8 +23,6 @@
           <%= form_with(url: recipe_recipe_foods_path(@recipe)) do |f| %>
             <%= f.label :food_id, "Food" %>
             <%= f.select :food_id, @foods.map {|food| [food.name, food.id]}  %>
-            <%= f.label :quantity, "Amount" %>
-            <%= f.text_field :quantity %>
             <%= f.submit "Add Ingredient" %>
           <% end %>
         </div>

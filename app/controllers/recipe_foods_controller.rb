@@ -8,8 +8,10 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_id = params[:recipe_id]
     @food_id = params[:food_id]
-    @recipe_food = RecipeFood.new(quantity: params[:quantity], food_id: @food_id, recipe_id: @recipe_id)
+    @food = Food.find(@food_id)
+    @recipe_food = RecipeFood.new(quantity: @food.quantity, food_id: @food_id, recipe_id: @recipe_id)
     redirect_to recipe_path(@recipe_id) if @recipe_food.save
+
   end
 
   def destroy

@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
     @user = current_user
     @foods = Food.where(user_id: current_user)
     @recipe = Recipe.find(params[:id])
-    @recipe_food = RecipeFood.find(3)
     @ingredients = @recipe.foods
   end
 

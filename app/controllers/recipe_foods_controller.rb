@@ -6,14 +6,11 @@ class RecipeFoodsController < ApplicationController
   def show; end
 
   def create
-    @food = Food.find(params[:food_id])
-    @recipe_food = RecipeFood.new(quantity: params[:quantity])
-    @recipe_food.recipe_id = @recipe.id
-    @recipe_food.food_id = @food.id
+    @recipe_id = params[:recipe_id]
+    @food_id = params[:food_id]
+    @recipe_food = RecipeFood.new(quantity: params[:quantity], food_id: @food_id, recipe_id: @recipe_id)
     if @recipe_food.save
-      redirect_to recipe_path(@recipe)
-    else
-      render :new
+      redirect_to recipe_path(@recipe_id)
     end
   end
 
@@ -23,9 +20,9 @@ class RecipeFoodsController < ApplicationController
     redirect_to recipe_path(@recipe_food.recipe)
   end
 
-  private
+  # private
 
-  def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :food_id)
-  end
+  # def recipe_food_params
+  #   params.require(:recipe_food).permit(:quantity, :food_id, :recipe_id)
+  # end
 end

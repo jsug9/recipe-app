@@ -126,3 +126,8 @@ input:checked + .slider::before {
   background-color: #999;
   color: white;
 }
+
+// Add Ingredient form
+#recipe_id {
+  display: none;
+}

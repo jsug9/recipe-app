@@ -6,7 +6,7 @@
       <div>Preparation time <%=@recipe.preparation_time%> hrs</div>
         <div class="toggle">Public: 
           <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" checked>
             <span class="slider round"></span>
           </label>
         </div>
@@ -25,8 +25,7 @@
             <%= f.select :food_id, @foods.map {|food| [food.name, food.id]}  %>
             <%= f.label :quantity, "Amount" %>
             <%= f.text_field :quantity %>
-            <%= f.label :recipe_id, "" %>
-            <%= f.text_field :recipe_id %>
+            <%= f.select :recipe_id, [@recipe.id]  %>
             <%= f.submit "Add Ingredient" %>
           <% end %>
         </div>

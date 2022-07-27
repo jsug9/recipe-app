@@ -1,1 +1,44 @@
-<h1>Current User's Specific Recipe!</h1>
+<main class="recipe_show">
+  <h1><%=@recipe.name%></h1>
+  <div class="recipe_details">
+    <div class="main_details">
+      <div class="header_details">
+      <div>Preparation time <%=@recipe.preparation_time%> hrs</div>
+        <div class="toggle">Public: 
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <p>Cooking time: <%=@recipe.cooking_time%></p>
+      <br>
+      <br>
+      <div>Placeholder for all of the steps</div>
+      <div class="header_details">
+      <%=button_to "Generate Shopping List"%>
+      <%=button_to "Ingredients"%>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <table id="ingredients">
+  <tr>
+    <th>Ingredient</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <%@ingredients.each do |ingredient|%>
+    <tr>
+      <td><%=ingredient.name%></td>
+      <td><%=ingredient.quantity%></td>
+      <td><%=ingredient.price * ingredient.quantity%></td>
+      <td><%= link_to "Modify"%><%= button_to "Delete", food_path(ingredient.id), class:"delete_button", method: :delete %>
+      </tr>
+    <%end%>
+</table>
+
+</main>
+

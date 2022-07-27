@@ -18,10 +18,4 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
     redirect_to recipe_path(@recipe_food.recipe)
   end
-
-  # private
-
-  # def recipe_food_params
-  #   params.require(:recipe_food).permit(:quantity, :food_id, :recipe_id)
-  # end
 end

@@ -5,4 +5,8 @@ class Food < ApplicationRecord
 
   validates :name, uniqueness: true
   validates :quantity, :price, numericality: { greater_than: 0, only_float: true }
+
+  def total_price
+    quantity * price
+  end
 end

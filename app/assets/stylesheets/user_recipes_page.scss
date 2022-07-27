@@ -6,13 +6,18 @@
   margin: 20px;
   gap: 1rem;
 
+  .card_holder {
+    width: 100%;
+    max-width: 400px;
+  }
+
   .recipe_card {
     width: 100%;
     max-width: 500px;
     display: flex;
     justify-content: space-around;
     border: 1px solid black;
-    padding: 1rem;
+    padding: 1.5rem;
     color: black;
     text-decoration: none;
 
@@ -26,9 +31,12 @@
     .recipe_description {
       max-width: 250px;
     }
-
-    .remove_recipe_button {
-      z-index: 100;
-    }
   }
+}
+
+.remove_recipe_button {
+  z-index: 100;
+  position: fixed;
+  margin-top: -25px;
+  margin-left: 55px;
 }

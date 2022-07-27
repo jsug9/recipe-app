@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 user = User.new(name: "test", email: "test@test.com", role: "admin", password: "123456", confirmed_at: Time.now)
-user2 = User.new(name: "test1", email: "tes1t@test.com", password: "123456", confirmed_at: Time.now)
+user2 = User.new(name: "Augusto", email: "augusto@dev.com", password: "123456", confirmed_at: Time.now)
 user3 = User.new(name: "test2", email: "test2@test.com", password: "123456", confirmed_at: Time.now)
 user.skip_confirmation!
 user2.skip_confirmation!

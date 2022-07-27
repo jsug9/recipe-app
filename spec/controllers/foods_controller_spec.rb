@@ -9,6 +9,12 @@ RSpec.describe 'Foods', type: :request do
     )
     @user.skip_confirmation!
     @user.save!
-    @food = Food.create()
+    @food = Food.create(
+      name: "Carrot",
+      measurement_unit: "kgs",
+      price: 2.5,
+      quantity: 1000,
+      user_id: user.id
+    )
   end
 end

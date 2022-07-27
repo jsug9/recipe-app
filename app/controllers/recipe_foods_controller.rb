@@ -1,10 +1,14 @@
 class RecipeFoodsController < ApplicationController
+  def index; end
+
+  def show; end
+
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @food = Food.find(params[:food_id])
     @recipe_food = RecipeFood.new(quantity: params[:quantity])
-    @recipe_food.recipe = @recipe
-    @recipe_food.food = @food
+    @recipe_food.recipe = @recipe.id
+    @recipe_food.food = @food.id
     if @recipe_food.save
       redirect_to recipe_path(@recipe)
     else

@@ -1,18 +1,21 @@
+<div class="user_recipes_list">
 <h1>All Recipes!</h1>
-
-<div>
-  <%@recipes.each do |recipe|%>
+<%@recipes.each do |recipe|%>
     <%= link_to recipe_path(recipe.id), class: "recipe_card" do %>
-      <div>
-        <div>
+      <div class="recipe_card_options">
+        <div class="recipe_title">
           <h2><%= recipe.name %></h2>
           <h3>By <%= recipe.user.name %></h3>
         </div>
-        <div>
+      </div>
+      <div class="recipe_description">
           <p>Total food items: <%= recipe.recipe_foods.count %></p>
           <p>Total price: $ <%= recipe.total_price %></p>
         </div>
-      </div>
     <%end%>
   <%end%>
+</div>
+
+<div>
+  
 </div>

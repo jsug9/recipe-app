@@ -1,7 +1,7 @@
 <nav class="nav">
 <ul>
   <li class="no_list_style">Welcome, <%= current_user.name %>!</li>
-  <%{"Home" => home_path, "Foods" => foods_path , "My Recipes" => recipes_path}.map do |key, value|%>
+  <%{"Home" => home_path, "Foods" => foods_path , "My Recipes" => recipes_path, "Shopping List" => shopping_list_path }.map do |key, value|%>
   <li class="link_list_li"> <%= link_to "#{key.to_s}", value, class: "link_class" %></li>
   <% end %>
   <li class="link_list_li"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link_class" %></li>

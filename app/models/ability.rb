@@ -3,13 +3,12 @@ class Ability
 
   def initialize(user)
     if user.admin?
-      can :manage, User
-      can :manage, Food
-      can :manage, Recipe
+      can :manage, :all
     else
       can :manage, User, user: user
       can :manage, Food, user: user
-      can :manage, Recipe, user:
+      can :manage, Recipe, user: user
+      can :manage, RecipeFood, user:
     end
   end
 end

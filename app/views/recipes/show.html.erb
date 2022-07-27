@@ -6,7 +6,7 @@
       <div>Preparation time <%=@recipe.preparation_time%> hrs</div>
         <div class="toggle">Public: 
           <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" checked>
             <span class="slider round"></span>
           </label>
         </div>
@@ -17,7 +17,16 @@
       <div>Placeholder for all of the steps</div>
       <div class="header_details">
       <%=button_to "Generate Shopping List"%>
-      <%=button_to "Ingredients"%>
+      
+      <% if can? :manage, @recipe %>
+        <div>
+          <%= form_with(url: recipe_recipe_foods_path(@recipe)) do |f| %>
+            <%= f.label :food_id, "Food" %>
+            <%= f.select :food_id, @foods.map {|food| [food.name, food.id]}  %>
+            <%= f.submit "Add Ingredient" %>
+          <% end %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

@@ -5,11 +5,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-  p params
-  p "HELOOOOO"
     @user = current_user
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.foods
+    p @ingredients
   end
+
   def all; end
 
   def destroy

@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
   def show
     @user = current_user
     @foods = Food.where(user_id: current_user)
-    # @foods = Food.where(user_id: current_user).where.not(id: RecipeFood.pluck(:food_id)) if we want to remove repeated food
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.foods
   end
@@ -18,6 +17,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    p @recipe
+    @recipe.destroy
+    redirect_to recipes_path
   end
 end

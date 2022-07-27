@@ -15,10 +15,10 @@ user.save!
 user2.save!
 user3.save!
 
-recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 2.1, description: "Very tasty dish description", user_id: user.id)
-recipe2 = Recipe.create(name: "Normal dish", preparation_time: 1.2, cooking_time: 3.1, description: "Very normal dish description", user_id: user2.id)
-recipe2 = Recipe.create(name: "Awesome dish", preparation_time: 1.5, cooking_time: 4.1, description: "Very awesome dish description", user_id: user2.id)
-recipe3 = Recipe.create(name: "Very dish", preparation_time: 1.6, cooking_time: 5.1, description: "Very very dish description", user_id: user3.id)
+recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 2.1, description: "Very tasty dish description", user_id: user.id, public: true)
+recipe2 = Recipe.create(name: "Normal dish", preparation_time: 1.2, cooking_time: 3.1, description: "Very normal dish description", user_id: user2.id, public: true)
+recipe2 = Recipe.create(name: "Awesome dish", preparation_time: 1.5, cooking_time: 4.1, description: "Very awesome dish description", user_id: user2.id, public: true)
+recipe3 = Recipe.create(name: "Very dish", preparation_time: 1.6, cooking_time: 5.1, description: "Very very dish description", user_id: user3.id, public: true)
 
 food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: user.id)
 food2 = Food.create(name: "Apple", measurement_unit: "g", price: 3.2, quantity: 200, user_id: user2.id)

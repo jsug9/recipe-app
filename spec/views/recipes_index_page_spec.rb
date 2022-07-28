@@ -18,7 +18,7 @@ RSpec.describe 'Recipes Index Page', type: :feature do
         name: "Recipe #{id}",
         preparation_time: 1.1,
         cooking_time: 2.1,
-        description: "Very tasty dish description",
+        description: 'Very tasty dish description',
         user_id: @user.id,
         public: true
       )

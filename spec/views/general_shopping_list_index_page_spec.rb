@@ -22,7 +22,8 @@ RSpec.describe 'General Shopping List Index Page', type: :feature do
         user_id: @user.id
       )
     end
-    recipe = Recipe.create(name: "Tasty dish", preparation_time: 1.1, cooking_time: 2.1, description: "Very tasty dish description", user_id: @user.id, public: true)
+    recipe = Recipe.create(name: 'Tasty dish', preparation_time: 1.1, cooking_time: 2.1,
+                           description: 'Very tasty dish description', user_id: @user.id, public: true)
     Food.all.each do |food|
       RecipeFood.create(quantity: 2, recipe_id: recipe.id, food_id: food.id)
     end

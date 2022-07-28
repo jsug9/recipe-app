@@ -14,10 +14,10 @@ RSpec.describe 'Recipes Show Page', type: :feature do
     @user.save!
     sign_in @user
     recipe = Recipe.create(
-      name: "Recipe 1",
+      name: 'Recipe 1',
       preparation_time: 1.1,
       cooking_time: 2.1,
-      description: "Very tasty dish description",
+      description: 'Very tasty dish description',
       user_id: @user.id,
       public: true
     )

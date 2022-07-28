@@ -1,0 +1,18 @@
+<div class="card_holder">
+<%= link_to recipe_path(recipe.id), class: "recipe_card" do %>
+  <div class="recipe_card_options">
+    <p class="recipe_title">
+      <%=recipe.name%>
+    </p>
+  </div>
+  <p class="recipe_description">
+    <%=recipe.description%>
+  </p>
+<%end%>
+<%if can? :manage, recipe %>
+      <%=button_to "REMOVE", recipe_path(recipe.id), method: :delete, class: "remove_recipe_button"%>
+    <%end%>
+</div>
+
+  
+

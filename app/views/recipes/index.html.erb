@@ -1,0 +1,6 @@
+<div class="user_recipes_list">
+<h1><%=@user.name%>'s Recipes</h1>
+  <%@recipes.each do |recipe|%>
+  <%=render partial: 'partials/recipe_card', locals: {recipe: recipe}%>
+<%end%>
+</div>

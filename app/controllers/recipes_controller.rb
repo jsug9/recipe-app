@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def all
-    @recipes = Recipe.where(user_id: nil).order(created_at: :desc)
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 
   def destroy

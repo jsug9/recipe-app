@@ -4,7 +4,7 @@ RSpec.describe 'Food Index Page', type: :feature do
   before(:each) do
     @user = User.new(
       name: 'Augusto',
-      email: 'augusto@dev.com',
+      email: 'augusto@development.com',
       password: '123456',
       password_confirmation: '123456',
       confirmed_at: Time.now,

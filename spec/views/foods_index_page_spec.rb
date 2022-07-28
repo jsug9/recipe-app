@@ -25,7 +25,20 @@ RSpec.describe 'Food Index Page', type: :feature do
     visit foods_path
   end
 
+  it 'should have 5 foods' do
+    expect(page).to have_content('Food 1')
+    expect(page).to have_content('Food 2')
+    expect(page).to have_content('Food 3')
+    expect(page).to have_content('Food 4')
+    expect(page).to have_content('Food 5')
+  end
+
   it 'should have an add food button' do
     expect(page).to have_link('Add Food')
+  end
+
+  it 'add food button should redirect to new food page' do
+    click_link('Add Food')
+    expect(current_path).to eq(new_food_path)
   end
 end

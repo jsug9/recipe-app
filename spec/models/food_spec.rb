@@ -3,15 +3,16 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before :each do
     @user = User.new(
-      name: "Augusto",
-      email: "augusto@dev.com",
-      password: "123456",
-      password_confirmation: "123456",
+      name: 'Augusto',
+      email: 'augusto@dev.com',
+      password: '123456',
+      password_confirmation: '123456',
       confirmed_at: Time.now,
-      role: "admin")
+      role: 'admin'
+    )
     @user.skip_confirmation!
     @user.save!
-    @food = Food.create(name: "Carrot", measurement_unit: "kgs", price: 2.5, quantity: 1000, user_id: @user.id)
+    @food = Food.create(name: 'Carrot', measurement_unit: 'kgs', price: 2.5, quantity: 1000, user_id: @user.id)
   end
 
   describe 'Food Model Properties' do
